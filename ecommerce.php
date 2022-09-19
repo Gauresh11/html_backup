@@ -16,7 +16,7 @@
             <h4>'.$pricw.'</h4>
         </div>
         <a href="#"><h4 class="cart"><i class="fal fa-solid fa-cart-shopping"></h4></i></a>
-    </div>';
+        </div>'
+        ;
     echo $lememnt;
     }
-   ?>
