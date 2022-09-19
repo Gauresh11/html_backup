@@ -3,7 +3,9 @@
 require('ecommerce.php');
 require('create.php');
 require('config.php');
-
+if (isset($_POST['add'])) {
+    //print_r($_POST['product_id']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +18,7 @@ require('config.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style2.css">
+  
 </head>
 
 <body>
@@ -76,14 +79,14 @@ require('config.php');
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img']);
+                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img'], $row['id']);
                     }
                 }
             }
             //contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
+            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
+            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
+            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
             ?>
         </div>
 
@@ -105,14 +108,14 @@ require('config.php');
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img']);
+                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img'], $row['id']);
                     }
                 }
             }
             //contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
+            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
+            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
+            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
             ?>
         </div>
     </section>
@@ -121,7 +124,9 @@ require('config.php');
 
 </html>
 <script>
-    function myFunction() {
-        alert("I am an alert box!");
-    }
-</script>
+        function myFunction() {
+                var number = document.getElementById("number").value;
+
+                alert(number);
+            }
+    </script>

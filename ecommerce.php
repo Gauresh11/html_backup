@@ -1,7 +1,10 @@
 <?php  
-    function contient($title,$desp,$pricw,$img){
+    function contient($title,$desp,$pricw,$img,$productid){
         
-        $lememnt='<div class="pro">
+        $lememnt='
+        
+        <div class="pro">
+        <form action="ecommerce1.php" method="post">
         <a href="#"><img src="'.$img.'" alt=""></a>
         <div class="des">
             <span>'.$title.'</span>
@@ -15,7 +18,10 @@
             </div>
             <h4>'.$pricw.'</h4>
         </div>
-        <a href="#"><h4 class="cart"><i class="fal fa-solid fa-cart-shopping"></h4></i></a>
+        
+        <button type=\"submit\" class=\"btn btn-warning my-3\" name="add"><h4 class="cart" ><i class="fal fa-solid fa-cart-shopping"></h4></i></button>
+        <input type="hidden" name="product_id" value='.$productid.'>
+        </form>
         </div>'
         ;
     echo $lememnt;
