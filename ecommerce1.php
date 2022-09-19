@@ -105,7 +105,6 @@ require('ecommerce.php')
             ?>
         </div>
     </section>
-
     <script src="script.js"></script>
 </body>
 

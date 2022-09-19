@@ -7,7 +7,7 @@
 
         <div>
             <ul id="navbar">
-                <li><a class="active" href="ecommerce.html">HOME</a></li>
+                <li><a class="active" href="ecommerce1.php">HOME</a></li>
                 <li><a href="shop.html">SHOP</a></li>
                 <li><a href="blog.html">BLOG</a></li>
                 <li><a href="about.html">ABOUT</a></li>
