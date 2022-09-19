@@ -1,5 +1,8 @@
 <?php
-require('ecommerce.php')
+
+require('ecommerce.php');
+require('create.php');
+require('config.php');
 
 ?>
 <!DOCTYPE html>
@@ -16,10 +19,10 @@ require('ecommerce.php')
 </head>
 
 <body>
-    <?php  
-    require('header.php'); 
-     ?>
-    
+    <?php
+    require('header.php');
+    ?>
+
     <section id="hello">
         <div class="ani">
             <h4>Trade-in-offer</h4>
@@ -69,11 +72,15 @@ require('ecommerce.php')
         <h3>Top Deals for you</h3>
         <div class="product-1">
             <?php
-            contient('3A FEATURETAIL', 'Combo of Parking Assistance 4.3 Inch Tft LCD Monitor + 8LED Reverse Camera for Cars + Reverse Parking Sensor White', '₹2149', 'ca1.jpg');
-            contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
-            contient("DRIVABLY PRO EXPERIENCE", "Drivably Pro 9 Inches Universal Car Android 2GB Ram 16GB ROM with IPS Display Gorilla Glass with Android 10.1", "₹5949", "sc2.jpg");
-            contient("MOMO", "Black Plastic And Metal MOMO Car Steering Wheel", "₹8681", "st1.jpg");
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
+            $sql = "SELECT * FROM test";
+            if ($result = mysqli_query($conn, $sql)) {
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img']);
+                    }
+                }
+            }
+            //contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
@@ -94,11 +101,15 @@ require('ecommerce.php')
         <h3>New Arrivals</h3>
         <div class="product-1">
             <?php
-            contient('3A FEATURETAIL', 'Combo of Parking Assistance 4.3 Inch Tft LCD Monitor + 8LED Reverse Camera for Cars + Reverse Parking Sensor White', '₹2149', 'ca1.jpg');
-            contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
-            contient("DRIVABLY PRO EXPERIENCE", "Drivably Pro 9 Inches Universal Car Android 2GB Ram 16GB ROM with IPS Display Gorilla Glass with Android 10.1", "₹5949", "sc2.jpg");
-            contient("MOMO", "Black Plastic And Metal MOMO Car Steering Wheel", "₹999", "st1.jpg");
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
+            $sql = "SELECT * FROM test";
+            if ($result = mysqli_query($conn, $sql)) {
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img']);
+                    }
+                }
+            }
+            //contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg");
@@ -110,7 +121,7 @@ require('ecommerce.php')
 
 </html>
 <script>
-function myFunction() {
-  alert("I am an alert box!");
-}
+    function myFunction() {
+        alert("I am an alert box!");
+    }
 </script>
