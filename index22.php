@@ -69,7 +69,7 @@ if (isset($_COOKIE['username_mini2'])) {
             background-color: #3e8e41;
         }
     </style>
-   
+
 </head>
 
 <body>
@@ -130,24 +130,24 @@ if (isset($_COOKIE['username_mini2'])) {
     <div class="">
     </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    
+
 </body>
 <script>
-        var x = document.getElementById("show");
-        var ses = '<?php
-                    if (isset($_COOKIE['username_mini2'])) {
-                        echo 1;
-                    } else {
-                        echo 0;
-                    }
-                    ?>'
-        //alert(ses);
-        //x.style.display = 'none';
-        if (ses == 1) {
-           x.style.display = 'none';
-        } else {
-            x.style.display = 'block';
-        }
-    </script>
+    var x = document.getElementById("show");
+    var ses = '<?php
+                if (isset($_COOKIE['username_mini2'])) {
+                    echo 1;
+                } else {
+                    echo 0;
+                }
+                ?>'
+    //alert(ses);
+    //x.style.display = 'none';
+    if (ses == 1) {
+        x.style.display = 'none';
+    } else {
+        x.style.display = 'block';
+    }
+</script>
 
 </html>

@@ -145,7 +145,7 @@ if (array_key_exists('lo', $_POST)) {
             </div>
             <nav>
                 <ul id='MenuItems'>
-                    <li><a href='#'>HOME</a></li>
+                    <li><a href='index22.php'>HOME</a></li>
                     <li><a href='#'>ABOUT US</a></li>
                     <li><a href='#'>SERVICES</a></li>
                     <li><a href='#'>CONTACT</a></li>

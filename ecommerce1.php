@@ -1,10 +1,46 @@
 <?php
-
+session_start();
 require('ecommerce.php');
 require('create.php');
 require('config.php');
 if (isset($_POST['add'])) {
     //print_r($_POST['product_id']);
+    if (isset($_SESSION['cart'])) {
+        $item_array_id = array_column($_SESSION['cart'], "product_id");
+        if (in_array($_POST['product_id'], $item_array_id)) {
+            //$added = "item is already added in a cart";
+            echo "<script>alert('Product is already added in the cart..!')</script>";
+            echo "<script>window.location = 'ecommerce1.php'</script>";
+            //print_r($item_array_id);
+        } else {
+            $count = count($_SESSION['cart']);
+            $item_array = array(
+                'product_id' => $_POST['product_id'],
+                'quantity' => 1,
+                'desprction' => $_POST['desp'],
+                'title' => $_POST['tit'],
+                'price' => $_POST['price'],
+                'img' => $_POST['img']
+
+            );
+            $_SESSION['cart'][$count] = $item_array;
+           // print_r($_SESSION['cart']);
+        }
+    } else {
+
+        $item_array = array(
+            'product_id' => $_POST['product_id'],
+            'quantity' => 1,
+            'desprction' => $_POST['desp'],
+            'title' => $_POST['tit'],
+            'price' => $_POST['price'],
+            'img' => $_POST['img']
+        );
+
+        // Create new session variable
+        $_SESSION['cart'][0] = $item_array;
+       // print_r($_SESSION['cart']);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +54,25 @@ if (isset($_POST['add'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style2.css">
-  
+    <style>
+        #cart_count {
+            text-align: center;
+            padding: 0 0.9rem 0.1rem 0.9rem;
+            border-radius: 3rem;
+        }
+
+        .shopping-cart {
+            padding: 3% 0;
+        }
+
+        .cart-items+.cart-items {
+            padding: 2% 0;
+        }
+
+        .price-details h6 {
+            padding: 3% 2%;
+        }
+    </style>
 </head>
 
 <body>
@@ -83,11 +137,12 @@ if (isset($_POST['add'])) {
                     }
                 }
             }
+
             //contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
+          /*  contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
-            ?>
+            */?>
         </div>
 
     </section>
@@ -113,10 +168,10 @@ if (isset($_POST['add'])) {
                 }
             }
             //contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
+            /*contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
-            ?>
+            */?>
         </div>
     </section>
     <script src="script.js"></script>
@@ -124,9 +179,9 @@ if (isset($_POST['add'])) {
 
 </html>
 <script>
-        function myFunction() {
-                var number = document.getElementById("number").value;
+    function myFunction() {
+        var number = document.getElementById("number").value;
 
-                alert(number);
-            }
-    </script>
+        alert(number);
+    }
+</script>
