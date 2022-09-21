@@ -1,0 +1,12 @@
+recurring:
+anti
+cloud
+internet
+security
+domain
+maintenance
+employee
+
+non recurring:
+pc
+land

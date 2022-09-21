@@ -170,8 +170,8 @@ if (isset($_POST['add'])) {
             //contient('JBL Store', 'JBL Gto609C 540 Watt Woofer, Surround Sound Speaker', '₹8999', 'sp1.jpg');
             /*contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
             contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
-            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);
-            */?>
+            contient("3A FEATURETAIL", "Reverse Camera for Cars", "₹2149", "ca1.jpg", 5);*/
+            ?>
         </div>
     </section>
     <script src="script.js"></script>

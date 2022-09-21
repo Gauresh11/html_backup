@@ -35,8 +35,8 @@ function cartElement($producttitle, $productprice, $productimg, $productid,$qun)
     $count = 1;
     $element = "
         
-                        <div class=\"border rounded\">
-                            <div class=\"row bg-white\">
+                         <div class=\"border rounded\">
+                           <div class=\"row bg-white\">
                                 <div class=\"col-md-3 pl-0\">
                                     <img src=$productimg alt=\"Image1\" class=\"img-fluid\">
                                 </div>
