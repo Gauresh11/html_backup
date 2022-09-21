@@ -81,7 +81,7 @@ if (isset($_COOKIE['username_mini2'])) {
             <div class="menu">
                 <ul>
                     <li><a href="#">HOME</a></li>
-                    <li><a href="ecommerce1.php">ECOMMERCE</a></li>
+                    <li><a href="ecommerce3.php">ECOMMERCE</a></li>
                     <li><a href="#">MAPS</a></li>
                     <li><a href="#">INSTALLATION</a></li>
 

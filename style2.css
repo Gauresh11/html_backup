@@ -481,7 +481,7 @@ body{
     padding: 5px;
 }
 
-input{
+#see23{
     position: sticky;
     top: 0;
     left: 0;
@@ -516,7 +516,7 @@ input{
     cursor: pointer;
 }
 
-#search2:hover input{
+#search2:hover #see23{
     display: block;
 }
 

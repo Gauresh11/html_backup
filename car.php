@@ -70,7 +70,7 @@ if (isset($_POST['add'])) {
                 <li><a href="contact.html">CONTACT</a></li>
                 <li><a href="cart.html"><i class="fa-solid fa-bag-shopping fa-2x"></i></a></li>
                 <li class="sea"><form id ="search2">
-                    <input type="search" placeholder="Search here ...">
+                    <input type="search" placeholder="Search here ..." id="see23">
                     <i class="fa fa-search"></i>
                     </form></li>
             </ul>

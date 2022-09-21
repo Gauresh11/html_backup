@@ -74,7 +74,7 @@ if (isset($_POST['add'])) {
                 <li><a href="cart.html"><i class="fa-solid fa-bag-shopping fa-2x"></i></a></li>
                 <li class="sea">
                     <form action="" id ="search2">
-                        <input type="search" placeholder="Search here ...">
+                        <input type="search" id ="see23" placeholder="Search here ...">
                         <i class="fa fa-search"></i>
                     </form>
                 </li>
