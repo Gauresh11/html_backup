@@ -465,7 +465,7 @@ body{
     }
 }
 
-form{
+#search2 {
     position: relative;
     top: 10%;
     left: 50%;
@@ -510,16 +510,16 @@ input{
     transition: all 1s;
 }
 
-form:hover{
+#search2:hover{
     width: 300px;
     cursor: pointer;
 }
 
-form:hover input{
+#search2:hover input{
     display: block;
 }
 
-form:hover .fa{
+#search2:hover .fa{
     background: #07051a;
     color: white;
 }

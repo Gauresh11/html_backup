@@ -3,6 +3,7 @@ session_start();
 require('ecommerce.php');
 require('create.php');
 require('config.php');
+$_SESSION['link']="ecommerce1.php";
 if (isset($_POST['add'])) {
     //print_r($_POST['product_id']);
     if (isset($_SESSION['cart'])) {
@@ -11,7 +12,7 @@ if (isset($_POST['add'])) {
             //$added = "item is already added in a cart";
             echo "<script>alert('Product is already added in the cart..!')</script>";
             echo "<script>window.location = 'ecommerce1.php'</script>";
-            //print_r($item_array_id);
+            print_r($item_array_id);
         } else {
             $count = count($_SESSION['cart']);
             $item_array = array(
@@ -24,7 +25,7 @@ if (isset($_POST['add'])) {
 
             );
             $_SESSION['cart'][$count] = $item_array;
-           // print_r($_SESSION['cart']);
+           print_r($_SESSION['cart']);
         }
     } else {
 
@@ -39,7 +40,7 @@ if (isset($_POST['add'])) {
 
         // Create new session variable
         $_SESSION['cart'][0] = $item_array;
-       // print_r($_SESSION['cart']);
+       print_r($_SESSION['cart']);
     }
 }
 ?>
@@ -133,7 +134,7 @@ if (isset($_POST['add'])) {
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img'], $row['id']);
+                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img'], $row['id'],$_SESSION['link']);
                     }
                 }
             }
@@ -163,7 +164,7 @@ if (isset($_POST['add'])) {
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img'], $row['id']);
+                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img'], $row['id'],$_SESSION['link']);
                     }
                 }
             }

@@ -1,11 +1,11 @@
 <?php
 global $added;
-function contient($title, $desp, $pricw, $img, $productid)
+function contient($title, $desp, $pricw, $img, $productid,$current)
 {
     $added = "";
     $lememnt = "
         <div class=\"pro\">
-        <form action=\"ecommerce1.php\" method=\"post\">
+        <form action=\"$current\" method=\"post\">
         <a href=\"#\"><img src=\" $img \" alt=\"\"></a>
         <input type=\"hidden\" name=\"img\" value=\"$img\" />
         <div class=\"des\">
@@ -29,6 +29,28 @@ function contient($title, $desp, $pricw, $img, $productid)
         </form>
         </div>";
     echo $lememnt;
+}
+function con1()
+{
+    $element="<div class=\"pro\">
+    <form action=\"\" method=\"post\">
+    <a href=\"#\"><img src=\"ca1.jpg\" alt=\"\"></a>
+    <div class=\"des\">
+        <span>3A FEATURETAIL</span>
+        <h5>Combo of Parking Assistance 4.3 Inch Tft LCD Monitor + 8LED Reverse Camera for Cars + Reverse Parking Sensor White</h5>
+        <div class=\"star\">
+            <i class=\"fas fa-star\"></i>
+            <i class=\"fas fa-star\"></i>
+            <i class=\"fas fa-star\"></i>
+            <i class=\"fas fa-star\"></i>
+            <i class=\"fas fa-star\"></i>
+        </div>
+        <h4>₹2149</h4>
+    </div>
+    <a href=\"#\"><h4 class=\"cart\"><i class=\"fal fa-solid fa-cart-shopping\"></h4></i></a>
+    </form>
+</div>";
+echo $element;
 }
 function cartElement($producttitle, $productprice, $productimg, $productid,$qun)
 {
