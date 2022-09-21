@@ -25,7 +25,7 @@ if (isset($_POST['remove'])){
         }
     }
   }
-  if (isset($_POST['cod'])){
+  if (isset($_POST['cod'])){  
     $_SESSION['finalcart']=$_SESSION['cart'];
     header("location: cod.php");
     }
@@ -133,6 +133,7 @@ if (isset($_POST['remove'])){
                             <hr>
                             <h6 id="ggg">
                                 </h6>
+                            
                                 <form  method="post">
                             
                               <button class='btn btn-primary' name ='cod'>buy now</button>      

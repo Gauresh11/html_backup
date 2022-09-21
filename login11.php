@@ -75,7 +75,7 @@ function register()
                 $cookie_name = "username_mini2";
                 $cookie_value = $email;
                 setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
-                header("location: index22.php");
+                header("location: index.php");
             } else {
                 echo "Something went wrong... cannot redirect!";
 
@@ -118,7 +118,7 @@ function login11()
         // $_SESSION['login_user'] = $myusername;
         //setcookie("username", "John Carter", time()+30*24*60*60);
         //setcookie("age", "36", time()+3600, "/", "",  0);
-        header("location: index22.php");
+        header("location: index.php");
     } else {
         $error = "Your Login Name or Password is invalid";
     }
@@ -145,7 +145,7 @@ if (array_key_exists('lo', $_POST)) {
             </div>
             <nav>
                 <ul id='MenuItems'>
-                    <li><a href='index22.php'>HOME</a></li>
+                    <li><a href='index.php'>HOME</a></li>
                     <li><a href='#'>ABOUT US</a></li>
                     <li><a href='#'>SERVICES</a></li>
                     <li><a href='#'>CONTACT</a></li>

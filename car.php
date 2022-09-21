@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
 require('ecommerce.php');
 require('create.php');
 require('config.php');
-$_SESSION['link']="car.php";
+$_SESSION['link'] = "car.php";
 //echo($_SESSION['link']);
 if (isset($_POST['add'])) {
     //print_r($_POST['product_id']);
@@ -13,6 +13,7 @@ if (isset($_POST['add'])) {
             //$added = "item is already added in a cart";
             echo "<script>alert('Product is already added in the cart..!')</script>";
             echo "<script>window.location = 'car.php'</script>";
+            //echo '<script type="text/javascript">location.reload(false);</script>';
             //print_r($item_array_id);
         } else {
             $count = count($_SESSION['cart']);
@@ -43,10 +44,11 @@ if (isset($_POST['add'])) {
         $_SESSION['cart'][0] = $item_array;
         //print_r($_SESSION['cart']);
     }
-}  
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,22 +59,39 @@ if (isset($_POST['add'])) {
     <link rel="stylesheet" href="car.css">
     <link rel="stylesheet" href="style2.css">
 </head>
+
 <body>
     <section id="header" class="bb">
-        <h2><font size="6" color="black">EV Atoms Store</font></h2>
-       
-    
+        <h2>
+            <font size="6" color="black">EV Atoms Store</font>
+        </h2>
+
+
         <div>
             <ul id="navbar">
-                <li><a class="active" href="ecommerce.html">HOME</a></li>
+                <li><a class="active" href="ecommerce3.php">HOME</a></li>
                 <li><a href="blog.html">BLOG</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="cart.html"><i class="fa-solid fa-bag-shopping fa-2x"></i></a></li>
-                <li class="sea"><form id ="search2">
-                    <input type="search" placeholder="Search here ..." id="see23">
-                    <i class="fa fa-search"></i>
-                    </form></li>
+                <li><a href="cart.php"><i class="fa-solid fa-bag-shopping fa-2x"></i></a></li>
+                <span id="count_number">
+
+                    <?php
+
+                    if (isset($_SESSION['cart'])) {
+                        $count = count($_SESSION['cart']);
+                        echo "<span id=\"cart_count\" class=\"text-warning bg-light\">$count</span>";
+                    } else {
+                        echo "<span id=\"cart_count\" class=\"text-warning bg-light\">0</span>";
+                    }
+                    ?>
+                </span>
+                <li class="sea">
+                    <form id="search2">
+                        <input type="search" placeholder="Search here ..." id="see23">
+                        <i class="fa fa-search"></i>
+                    </form>
+                </li>
             </ul>
         </div>
     </section>
@@ -81,35 +100,35 @@ if (isset($_POST['add'])) {
         <h3>Search by Categories</h3>
     </div>
     <section id="feature" class="section-p1">
-    
+
         <div class="option">
             <a href="#"><img class="a1" src="Engine.png" alt=""></a>
             <h6>Engine Parts</h6>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
+
         <div class="option">
             <a href="#"><img src="Steering.png" alt=""></a>
             <h6>Steering</h6>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
+
         <div class="option">
             <a href="#"><img src="Brakes.png" alt=""></a>
             <h6>Brake System</h6>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
+
         <div class="option">
-            <a href="#"><img  class="aa" src="speaker.png" alt=""></a>
+            <a href="#"><img class="aa" src="speaker.png" alt=""></a>
             <h6>Speaker</h6>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
+
         <div class="option">
             <a href="#"><img src="Engine.png" alt=""></a>
             <h6>Engine Parts</h6>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
-        
-    
-       </section>
+
+
+
+    </section>
 
     <section id="first" class="section-m1">
         <h1><strong>LARGEST MARKETPLACE</strong></h1>
@@ -128,15 +147,19 @@ if (isset($_POST['add'])) {
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_array($result)) {
-                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img'], $row['id'],$_SESSION['link']);
+                        contient($row['product_title'], $row['product_des'], $row['product_price'], $row['product_img'], $row['id'], $_SESSION['link']);
                     }
                 }
             }
+            contient("3A FEATURETAIL", "Combo of Parking Assistance 4.3 Inch Tft LCD Monitor + 8LED Reverse Camera for Cars + Reverse Parking Sensor White", "2149", "ca1.jpg", 7, $_SESSION['link']);
+            contient("3A FEATURETAIL", "Combo of Parking Assistance 4.3 Inch Tft LCD Monitor + 8LED Reverse Camera for Cars + Reverse Parking Sensor White", "2149", "ca1.jpg", 8, $_SESSION['link']);
+
             ?>
         </div>
-    
-       </section>
+
+    </section>
 
 
 </body>
+
 </html>

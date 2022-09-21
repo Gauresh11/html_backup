@@ -12,7 +12,7 @@ if (isset($_POST['add'])) {
         if (in_array($_POST['product_id'], $item_array_id)) {
             //$added = "item is already added in a cart";
             echo "<script>alert('Product is already added in the cart..!')</script>";
-            echo "<script>window.location = 'ecommerce1.php'</script>";
+            echo "<script>window.location = 'bike.php'</script>";
             //print_r($item_array_id);
         } else {
             $count = count($_SESSION['cart']);
@@ -67,11 +67,23 @@ if (isset($_POST['add'])) {
 
         <div>
             <ul id="navbar">
-                <li><a class="active" href="ecommerce.html">HOME</a></li>
+                <li><a class="active" href="ecommerce3.php">HOME</a></li>
                 <li><a href="blog.html">BLOG</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="cart.html"><i class="fa-solid fa-bag-shopping fa-2x"></i></a></li>
+                <li><a href="cart.php"><i class="fa-solid fa-bag-shopping fa-2x"></i></a></li>
+                <span id="count_number">
+
+                    <?php
+
+                    if (isset($_SESSION['cart'])) {
+                        $count = count($_SESSION['cart']);
+                        echo "<span id=\"cart_count\" class=\"text-warning bg-light\">$count</span>";
+                    } else {
+                        echo "<span id=\"cart_count\" class=\"text-warning bg-light\">0</span>";
+                    }
+                    ?>
+                </span>
                 <li class="sea">
                     <form action="" id ="search2">
                         <input type="search" id ="see23" placeholder="Search here ...">
@@ -136,7 +148,8 @@ if (isset($_POST['add'])) {
                     }
                 }
             }
-             //   contient("3A FEATURETAIL","Combo of Parking Assistance 4.3 Inch Tft LCD Monitor + 8LED Reverse Camera for Cars + Reverse Parking Sensor White","2149","ca1.jpg",0);
+              contient("3A FEATURETAIL","Combo of Parking Assistance 4.3 Inch Tft LCD Monitor + 8LED Reverse Camera for Cars + Reverse Parking Sensor White","2149","ca1.jpg",7,$_SESSION['link']);
+              contient("3A FEATURETAIL","Combo of Parking Assistance 4.3 Inch Tft LCD Monitor + 8LED Reverse Camera for Cars + Reverse Parking Sensor White","2149","ca1.jpg",8,$_SESSION['link']);
 
             ?>
 

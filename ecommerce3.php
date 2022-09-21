@@ -12,7 +12,7 @@ if (isset($_POST['add'])) {
             //$added = "item is already added in a cart";
             echo "<script>alert('Product is already added in the cart..!')</script>";
             echo "<script>window.location = 'ecommerce3.php'</script>";
-            print_r($item_array_id);
+           // print_r($item_array_id);
         } else {
             $count = count($_SESSION['cart']);
             $item_array = array(
@@ -25,7 +25,7 @@ if (isset($_POST['add'])) {
 
             );
             $_SESSION['cart'][$count] = $item_array;
-           print_r($_SESSION['cart']);
+          // print_r($_SESSION['cart']);
         }
     } else {
 
@@ -40,7 +40,7 @@ if (isset($_POST['add'])) {
 
         // Create new session variable
         $_SESSION['cart'][0] = $item_array;
-       print_r($_SESSION['cart']);
+       //print_r($_SESSION['cart']);
     }
 }
 ?>
@@ -107,12 +107,12 @@ if (isset($_POST['add'])) {
    <section id="features" class="section-p1">
     
     <div id="lax" class="options">
-        <a href="car.html"><img class="a1" src="c1.1.jpg" alt=""></a>
+        <a href="car.php"><img class="a1" src="c1.1.jpg" alt=""></a>
         <h6>Car Spare Parts</h6>
     </div>&nbsp;
 
     <div class="options">
-        <a href="bike.html"><img src="r1.1.jpg" alt=""></a>
+        <a href="bike.php"><img src="r1.1.jpg" alt=""></a>
         <h6 class="bike">Bike spare parts</h6>
     </div>&nbsp;
    </section>
