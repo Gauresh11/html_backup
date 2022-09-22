@@ -108,7 +108,7 @@ if (isset($_COOKIE['username_mini2'])) {
                     <a href="profile.php">Details</a>
                     <!-- <li><a href="#">Drop Down 2</a></li> -->
                     <!--  Use to create dropdown options  -->
-                    <a href="live chatting/index.php">Live chat</a>
+
                     <a href="logout.php">Log Out</a>
                 </div>
             </div>
@@ -121,7 +121,7 @@ if (isset($_COOKIE['username_mini2'])) {
                 Campbell</h4>
 
             </p>
-            <button id="show" class="cn"><a href="login1.html">LOGIN</a></button>
+            <button id="show" class="cn"><a href="login11.php">LOGIN</a></button>
         </div>
     </div>
     </div>
